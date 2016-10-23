@@ -1,0 +1,22 @@
+Source: cpuinfo
+Section: Utilities
+Priority: extra
+Maintainer: George Sofianos <georgesofianosgr@gmail.com>
+Build-Depends: cmake (>= 2.8),
+               debhelper (>= 8.0.0),
+               valac-0.24 | valac (>= 0.24),
+               libgtop2-dev,
+               libgtk-3-dev,
+               libsensors4-dev,
+               libgranite-dev
+Standards-Version: 3.9.3
+
+Package: cpuinfo
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Displays CPU Temperature & Usage
+ CPUInfo is a minimal dock application designed for elementary OS.
+ .
+ Features:
+  - View CPU temperature from dock icon.
+  - View CPU usage from dock icon

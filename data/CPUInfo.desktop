@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=CPUInfo
+Exec=/home/george/Projects/CPUInfo/cpuinfo
+Terminal=false
+Type=Application
+Icon=cpuinfo
+Categories=System;
