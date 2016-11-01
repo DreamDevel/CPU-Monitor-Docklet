@@ -18,7 +18,7 @@
  *
  */
 
-class CPUInfo.Models.CPU {
+class CPUMonitor.Models.CPU {
     public string manufacturer {get;set;}
     public int temperature {get;set;}
     public int[] core_temperature {get;set;}

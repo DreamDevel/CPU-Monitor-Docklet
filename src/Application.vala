@@ -18,9 +18,9 @@
  *
  */
 
-public class CPUInfo.Application : Dream.DockApplication {
+public class CPUMonitor.Application : Dream.DockApplication {
     private bool initialized = false;
-    private CPUInfo.Core.SensorsEngine engine;
+    private CPUMonitor.Core.SensorsEngine engine;
 
     construct {
         build_data_dir = Build.DATADIR;
@@ -29,20 +29,20 @@ public class CPUInfo.Application : Dream.DockApplication {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        program_name = "CPUInfo";
-        exec_name = "cpuinfo";
+        program_name = "CPU Monitor Docklet";
+        exec_name = "cpu-monitor-docklet";
 
         app_copyright = "2016";
-        application_id = "com.dreamdevel.cpuinfo";
+        application_id = "com.dreamdevel.cpu-monitor-docklet";
         app_icon = "cpuinfo";
-        app_launcher = "com.dreamdevel.cpuinfo.desktop";
+        app_launcher = "com.dreamdevel.cpu-monitor-docklet.desktop";
         app_years = "2016";
 
-        main_url = "https://launchpad.net/cpuinfo";
-        bug_url = "https://github.com/DreamDevel/CPUInfo/issues";
-        translate_url = "https://translations.launchpad.net/cpuinfo";
+        main_url = "https://launchpad.net/cpu-monitor-docklet";
+        bug_url = "https://github.com/DreamDevel/cpu-monitor-docklet/issues";
+        translate_url = "https://translations.launchpad.net/cpu-monitor-docklet";
         about_authors = {"George Sofianos <georgesofianosgr@gmail.com>",null};
-        help_url = "https://answers.launchpad.net/cpuinfo";
+        help_url = "https://answers.launchpad.net/cpumonitor-docklet";
         about_artists = {"George Sofianos <georgesofianosgr@gmail.com>", null};
         about_documenters = { "George Sofianos <georgesofianosgr@gmail.com>",
                                       null };
@@ -52,7 +52,7 @@ public class CPUInfo.Application : Dream.DockApplication {
     }
 
     public Application () {
-        engine = new CPUInfo.Core.SensorsEngine();
+        engine = new CPUMonitor.Core.SensorsEngine();
     }
 
     public override void activate () {
@@ -69,7 +69,7 @@ public class CPUInfo.Application : Dream.DockApplication {
         initialized = true;
     }
 
-    private void handle_cpu_details_updated (CPUInfo.Models.CPU CPU) {
+    private void handle_cpu_details_updated (CPUMonitor.Models.CPU CPU) {
         set_badge (CPU.temperature);
         set_progress (CPU.usage / 100.0);
     }

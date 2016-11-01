@@ -20,7 +20,7 @@
 
 void main (string[] args) {
     Gtk.init (ref args);
-    var app = new CPUInfo.Application ();
+    var app = new CPUMonitor.Application ();
 
     app.run (args);
     Sensors.cleanup();

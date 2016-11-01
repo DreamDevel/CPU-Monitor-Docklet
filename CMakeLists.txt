@@ -1,5 +1,5 @@
 
-project (cpuinfo)
+project (cpu-monitor-docklet)
 cmake_minimum_required (VERSION 2.6)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -8,13 +8,13 @@ add_definitions("-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\"")
 add_definitions("-w")
 
 set (HOMEDIR $ENV{HOME})
-set (HOME_DATADIR ${HOMEDIR}/.local/share/cpuinfo)
+set (HOME_DATADIR ${HOMEDIR}/.local/share/cpu-monitor-docklet)
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/cpuinfo")
+set (PKGDATADIR "${DATADIR}/cpu-monitor-docklet")
 set (PKG_DATADIR ${PKGDATADIR})
 
-set (EXEC_NAME "cpuinfo")
-set (RELEASE_NAME "CPUInfo")
+set (EXEC_NAME "cpu-monitor-docklet")
+set (RELEASE_NAME "CPU Monitor Docklet")
 set (VERSION "1.0")
 
 set (CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/config.vala)
@@ -67,7 +67,7 @@ add_subdirectory (po)
 
 add_executable(${EXEC_NAME} ${VALA_C})
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.dreamdevel.cpuinfo.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.dreamdevel.cpu-monitor-docklet.desktop DESTINATION ${DATADIR}/applications/)
 
 set(SYSTEM_DEFAULT_THEME ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/cpuinfo.png DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)

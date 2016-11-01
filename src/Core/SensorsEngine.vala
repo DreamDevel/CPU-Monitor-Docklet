@@ -18,12 +18,12 @@
  *
  */
 
-class CPUInfo.Core.SensorsEngine {
+class CPUMonitor.Core.SensorsEngine {
 
-    public CPUInfo.Models.CPU CPU {get;set;}
+    public CPUMonitor.Models.CPU CPU {get;set;}
     private int interval {get;set;}
 
-    public signal void cpu_details_updated(CPUInfo.Models.CPU CPU);
+    public signal void cpu_details_updated(CPUMonitor.Models.CPU CPU);
 
 
     public void initialize(int interval = 200) {
@@ -38,7 +38,7 @@ class CPUInfo.Core.SensorsEngine {
     }
 
     private void build_CPU_info () {
-        CPU = new CPUInfo.Models.CPU();
+        CPU = new CPUMonitor.Models.CPU();
 
         int features_count = 0;
         unowned Sensors.ChipName? chip = find_chip ();

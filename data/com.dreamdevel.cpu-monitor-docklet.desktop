@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=CPUInfo
-Exec=cpuinfo
+Name=CPU Monitor Docklet
+Exec=cpu-monitor-docklet
 Terminal=false
 Type=Application
 Icon=cpuinfo
@@ -8,9 +8,9 @@ Categories=System;
 Actions=AboutDialog;CloseAction;
 
 [Desktop Action AboutDialog]
-Exec=cpuinfo --about
-Name=About CPUInfo
+Exec=cpu-monitor-docklet --about
+Name=About CPU Monitor
 
 [Desktop Action CloseAction]
-Exec=cpuinfo --close
+Exec=cpu-monitor-docklet --close
 Name=Close
