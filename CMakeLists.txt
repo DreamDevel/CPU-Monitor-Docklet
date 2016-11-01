@@ -22,7 +22,7 @@ set (CONFIG_FILE_REL src/config.vala)
 configure_file (${CMAKE_CURRENT_SOURCE_DIR}/src/config.vala.cmake ${CONFIG_FILE})
 
 #include (GSettings)
-#add_schema ("schemas/org.dreamdev.cpuinfo.gschema.xml")
+#add_schema ("schemas/com.dreamdevel.cpuinfo.gschema.xml")
 
 find_package(PkgConfig)
 
@@ -47,21 +47,12 @@ include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     ${CONFIG_FILE_REL}
     src/main.vala
-#    src/app.vala
-
+    src/Application.vala
+    src/DockApplication.vala
     src/Models/CPU.vala
-
     src/Core/SensorsEngine.vala
-
 #    src/Core/Settings.vala
-
-#    src/Core/WidgetManager.vala
-
-#    src/UserInterface/Menus/ApplicationMenu.vala
-
-#    src/UserInterface/Widgets/HeaderBar.vala
-
-#    src/UserInterface/Windows/MainWindow.vala
+#    src/UserInterface/Windows/Preferences.vala
 CUSTOM_VAPIS
     vapis/libgtop-2.0.vapi
     vapis/sensors.vapi
@@ -76,10 +67,9 @@ add_subdirectory (po)
 
 add_executable(${EXEC_NAME} ${VALA_C})
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/CPUInfo.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.dreamdevel.cpuinfo.desktop DESTINATION ${DATADIR}/applications/)
 
 set(SYSTEM_DEFAULT_THEME ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor)
-#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/notify.png DESTINATION ${PKGDATADIR})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/16x16/apps/cpuinfo.png DESTINATION ${SYSTEM_DEFAULT_THEME}/16x16/apps)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/24x24/apps/cpuinfo.png DESTINATION ${SYSTEM_DEFAULT_THEME}/24x24/apps)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/images/icons/32x32/apps/cpuinfo.png DESTINATION ${SYSTEM_DEFAULT_THEME}/32x32/apps)

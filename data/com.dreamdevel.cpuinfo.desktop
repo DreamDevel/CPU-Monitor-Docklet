@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=CPUInfo
+Exec=cpuinfo
+Terminal=false
+Type=Application
+Icon=cpuinfo
+Categories=System;
+Actions=AboutDialog;CloseAction;
+
+[Desktop Action AboutDialog]
+Exec=cpuinfo --about
+Name=About CPUInfo
+
+[Desktop Action CloseAction]
+Exec=cpuinfo --close
+Name=Close

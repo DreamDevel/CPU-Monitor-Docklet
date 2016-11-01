@@ -54,6 +54,12 @@ class CPUInfo.Core.SensorsEngine {
         CPU.features_count = features_count;
     }
 
+    /* ChipName table
+    Name                              Hardware
+    --------------------------------------------
+    coretemp                          Intel CPU
+    k10temp,k8temp,fam15h_power       AMD CPU
+    */
     // TODO fix this to return only intel or AMD
     private unowned Sensors.ChipName? find_chip () {
         unowned Sensors.ChipName? chip = null;

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=CPUInfo
-Exec=cpuinfo
-Terminal=false
-Type=Application
-Icon=cpuinfo
-Categories=System;
