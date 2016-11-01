@@ -1,5 +1,5 @@
 Source: cpu-monitor-docklet
-Section: Utilities
+Section: utils
 Priority: extra
 Maintainer: George Sofianos <georgesofianosgr@gmail.com>
 Build-Depends: cmake (>= 2.8),
