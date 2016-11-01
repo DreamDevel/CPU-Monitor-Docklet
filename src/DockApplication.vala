@@ -23,26 +23,7 @@ public class Dream.DockApplication : Granite.Application {
 
     Unity.LauncherEntry entry;
 
-    public void set_badge(int value) {
-        entry.count = value;
-    }
-
-    public void set_progress(double value) {
-        entry.progress = value;
-    }
-
-    public void set_badge_visible (bool value) {
-        entry.count_visible = value;
-    }
-
-    public void set_progress_visible (bool value) {
-        entry.progress_visible = value;
-    }
-
     public DockApplication () {
-        entry = Unity.LauncherEntry.get_for_desktop_file(app_launcher);
-        set_badge_visible(true);
-        set_progress_visible(true);
     }
 
     public override void activate () {
@@ -55,6 +36,7 @@ public class Dream.DockApplication : Granite.Application {
     private void initialize () {
         hold();
         add_actions();
+        update_launcher_entry ();
     }
 
     private void add_actions () {
@@ -70,6 +52,13 @@ public class Dream.DockApplication : Granite.Application {
         this.release ();
     }
 
+    private void update_launcher_entry () {
+        entry = Unity.LauncherEntry.get_for_desktop_file(app_launcher);
+        set_badge_visible(true);
+        set_progress_visible(true);
+    }
+
+
     public new int run (string[] args) {
 
         foreach (var arg in args) {
@@ -81,5 +70,21 @@ public class Dream.DockApplication : Granite.Application {
         }
 
         return base.run (args);
+    }
+
+    public void set_badge(int value) {
+        entry.count = value;
+    }
+
+    public void set_progress(double value) {
+        entry.progress = value;
+    }
+
+    public void set_badge_visible (bool value) {
+        entry.count_visible = value;
+    }
+
+    public void set_progress_visible (bool value) {
+        entry.progress_visible = value;
     }
 }
